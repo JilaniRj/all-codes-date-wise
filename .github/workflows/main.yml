@@ -2,7 +2,7 @@ name: CI/CD
 on:
   push:
     branches:
-      - main  # Adjust the branch name as needed
+      - main  # Adjust the branch name as needed.
 jobs:
   validate:
     runs-on: ubuntu-latest
