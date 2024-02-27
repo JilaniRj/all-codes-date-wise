@@ -20,4 +20,13 @@ jobs:
         run: |
           pylint all-codes-date-wise/**/*.py
           pytest all-codes-date-wise
-     
+      - name: Build Docker Image
+        run: |
+          docker build -t my_python_app .
+      - name: Deploy/Update Pipelines
+        run: |
+          # Add deployment scripts or commands here
+          # For example:
+          # deploy_script.sh
+          # You can also use deployment tools like Ansible, Terraform, etc.
+          # Add more jobs or steps as needed for additional stages in your pipeline
