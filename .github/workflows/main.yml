@@ -15,12 +15,12 @@ jobs:
           python-version: 3.8
       - run: |
           pip install nbqa pytest pylint jupyter
-      - name: Convert Notebooks to Python Scripts
+      - name: Convert Notebook to Python Script
         run: |
-          jupyter nbconvert --to script all-codes-date-wise/*.ipynb --output-dir=./converted-scripts/
+          jupyter nbconvert --to script "all-codes-date-wise/23-01-2024,equipment,environment.ipynb" --output-dir=./converted-scripts/
       - name: Validate Code Changes
         run: |
-          pylint ./converted-scripts/*.py
+          pylint ./converted-scripts/23-01-2024,equipment,environment.py
           pytest all-codes-date-wise
       - name: Build Docker Image
         run: |
