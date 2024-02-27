@@ -15,10 +15,10 @@ jobs:
           python-version: 3.8
       - name: Install Dependencies
         run: |
-          pip install nbqa pytest
+          pip install nbqa pytest pylint
       - name: Validate Code Changes
         run: |
-          nbqa pylint all-codes-date-wise/*.ipynb
+          pylint all-codes-date-wise/*.ipynb
           pytest all-codes-date-wise
       - name: Build Docker Image
         run: |
