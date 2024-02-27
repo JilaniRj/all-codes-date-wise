@@ -18,8 +18,8 @@ jobs:
           pip install pylint pytest
       - name: Validate Code Changes
         run: |
-          pylint all-codes-date-wise
-          pytest all-codes-date-wise
+          pylint 23-01-2024,equipment,environment
+          pytest 23-01-2024,equipment,environment
       - name: Build Docker Image
         run: |
           docker build -t my_python_app .
