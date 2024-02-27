@@ -9,13 +9,12 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-      - name: Set up Python
+      - name: Set up Python and Jupyter
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
-      - name: Install Dependencies
-        run: |
-          pip install nbqa pytest pylint
+      - run: |
+          pip install nbqa pytest pylint jupyter
       - name: Convert Notebooks to Python Scripts
         run: |
           jupyter nbconvert --to script all-codes-date-wise/*.ipynb --output-dir=./converted-scripts/
