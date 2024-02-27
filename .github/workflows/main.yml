@@ -2,7 +2,7 @@ name: Continuous Integration
 on:
   push:
     branches:
-      - main
+      - sub-branch
 jobs:
   validate:
     runs-on: ubuntu-latest
