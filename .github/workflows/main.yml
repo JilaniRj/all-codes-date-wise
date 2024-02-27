@@ -7,27 +7,28 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
-    - name: Install Dependencies
-      run: |
-        pip install -r requirements.txt
-        pip install pylint pytest
-    - name: Validate Code Changes
-      run: |
-        pylint all-codes-date-wise
-        pytest all-codes-date-wise
-    - name: Build Docker Image
-      run: |
-        docker build -t my_python_app .
-    - name: Deploy/Update Pipelines
-      run: |
-        # Add deployment scripts or commands here
-        # For example:
-        # deploy_script.sh
-        # You can also use deployment tools like Ansible, Terraform, etc.
-# Add more jobs or steps as needed for additional stages in your pipeline
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install Dependencies
+        run: |
+          pip install pylint pytest
+      - name: Validate Code Changes
+        run: |
+          pylint all-codes-date-wise
+          pytest all-codes-date-wise
+      - name: Build Docker Image
+        run: |
+          docker build -t my_python_app .
+      - name: Deploy/Update Pipelines
+        run: |
+          # Add deployment scripts or commands here
+          # For example:
+          # deploy_script.sh
+          # You can also use deployment tools like Ansible, Terraform, etc.
+          # Add more jobs or steps as needed for additional stages in your pipeline
+
+     
