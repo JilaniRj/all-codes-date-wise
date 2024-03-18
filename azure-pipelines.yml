@@ -17,12 +17,7 @@ steps:
   displayName: 'Use Python $(python.version)'
 - script: |
     python -m pip install --upgrade pip
-    python -m pip install wheel
-    python -m pip install setuptools
-  displayName: 'Install pip, wheel, and setuptools'
-- script: |
-    python -m pip install -r requirements.txt
-  displayName: 'Install dependencies'
+  displayName: 'Upgrade pip'
 - script: |
     python -m pip install pytest pytest-azurepipelines
     pytest
